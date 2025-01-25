@@ -1,0 +1,12 @@
+# Python関連
+__pycache__/
+*.pyc
+*.pyo
+
+# 環境関連
+.env
+venv/
+
+# その他
+*.log
+.DS_Store
