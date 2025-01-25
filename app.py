@@ -2,11 +2,15 @@ from flask import Flask, request, jsonify
 from langchain.chat_models import ChatOpenAI  # Chatモデルをインポート
 from dotenv import load_dotenv
 import os
+from flask_cors import CORS
 
 # .envファイルを読み込む
 load_dotenv()
 
 app = Flask(__name__)
+
+# CORS対策
+CORS(app)
 
 # OpenAI APIキーを環境変数から取得
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
