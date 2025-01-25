@@ -21,6 +21,10 @@ if not OPENAI_API_KEY:
 # LangChainのChatOpenAIモデルを設定
 llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model="gpt-4o", max_tokens=100)
 
+@app.route('/', methods=['GET'])
+def health_check():
+    return jsonify({"status": "ok", "message": "Server is running"}), 200
+
 @app.route('/api/generate', methods=['POST'])
 def generate_text():
     try:
